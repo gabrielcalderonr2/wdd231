@@ -1,0 +1,14 @@
+@media (min-width: 768px) {
+  nav ul {
+    display: flex;
+    flex-direction: row;
+  }
+
+  nav ul li {
+    margin: 0 1rem;
+  }
+
+  #menu-toggle {
+    display: none;
+  }
+}
