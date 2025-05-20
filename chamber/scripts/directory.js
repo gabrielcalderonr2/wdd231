@@ -5,7 +5,7 @@ const listBtn = document.getElementById('list-view');
 // Load members
 async function fetchMembers() {
   try {
-    const response = await fetch('data/members.json');
+    const response = await fetch("./data/members.json");
     const members = await response.json();
     displayMembers(members);
   } catch (error) {
