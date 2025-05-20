@@ -67,11 +67,12 @@ nav ul li a {
 }
 
 .member-card {
-  border: 1px solid #ccc;
   background: #fff;
   padding: 1rem;
-  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
+
 
 footer {
   background-color: #2c3e50;
