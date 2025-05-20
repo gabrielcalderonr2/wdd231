@@ -2,7 +2,6 @@ const container = document.getElementById("directory-container");
 const gridBtn = document.getElementById("grid-view");
 const listBtn = document.getElementById("list-view");
 
-// Load members
 async function fetchMembers() {
   try {
     const response = await fetch("./chamber/scripts/members.json");
@@ -30,7 +29,6 @@ function displayMembers(members) {
   });
 }
 
-// Toggle views
 gridBtn.addEventListener("click", () => {
   container.classList.add("grid-view");
   container.classList.remove("list-view");
@@ -41,9 +39,7 @@ listBtn.addEventListener("click", () => {
   container.classList.remove("grid-view");
 });
 
-// Footer info
 document.getElementById("year").textContent = new Date().getFullYear();
 document.getElementById("lastModified").textContent = document.lastModified;
 
-// Load members
 fetchMembers();
