@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Sunrise Bakery",
+    "address": "123 Dough St",
+    "phone": "555-123-4567",
+    "website": "https://sunrisebakery.com",
+    "image": "sunrise.png",
+    "membership": 3
+  },
+  {
+    "name": "Mountain View Tech",
+    "address": "456 Silicon Ave",
+    "phone": "555-987-6543",
+    "website": "https://mvtech.com",
+    "image": "mvtech.png",
+    "membership": 2
+  },
+  {
+    "name": "GreenLeaf Grocers",
+    "address": "789 Market Ln",
+    "phone": "555-222-3333",
+    "website": "https://greenleafgrocers.com",
+    "image": "greenleaf.png",
+    "membership": 1
+  },
+  {
+    "name": "Oceanic Travel",
+    "address": "321 Beachside Blvd",
+    "phone": "555-444-5555",
+    "website": "https://oceanictravel.com",
+    "image": "oceanic.png",
+    "membership": 3
+  },
+  {
+    "name": "Bright Minds Tutoring",
+    "address": "654 Study Way",
+    "phone": "555-777-8888",
+    "website": "https://brightminds.com",
+    "image": "brightminds.png",
+    "membership": 2
+  },
+  {
+    "name": "Fit Factory Gym",
+    "address": "987 Power Rd",
+    "phone": "555-999-0000",
+    "website": "https://fitfactorygym.com",
+    "image": "fitfactory.png",
+    "membership": 1
+  },
+  {
+    "name": "Pixel Perfect Design",
+    "address": "159 Art Dr",
+    "phone": "555-111-2222",
+    "website": "https://pixelperfect.com",
+    "image": "pixelperfect.png",
+    "membership": 2
+  }
+]
