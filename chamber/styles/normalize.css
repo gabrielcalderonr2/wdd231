@@ -286,6 +286,7 @@ textarea {
  * 1. Correct the odd appearance in Chrome and Safari.
  * 2. Correct the outline style in Safari.
  */
+ 
 /* stylelint-disable-next-line property-no-vendor-prefix */
 [type="search"] {
   -webkit-appearance: textfield; /* 1 */

@@ -5,48 +5,42 @@ const listBtn = document.getElementById("list-view");
 
 const jsonURL = "./chamber/scripts/members.json"; 
 
-async function fetchMembers() {
-  try {
-    const response = await fetch(jsonURL);
-    if (!response.ok) throw new Error("Network response was not ok");
-    const members = await response.json();
-    displayMembers(members);
-  } catch (error) {
-    console.error("Error loading JSON:", error);
-  }
+async function getMembers() {
+  const response = await fetch('data/members.json');
+  const data = await response.json();
+  displayMembers(data.members);
 }
 
 function displayMembers(members) {
-  container.innerHTML = "";
-  members.forEach(member => {
-    const card = document.createElement("div");
-    card.classList.add("member-card");
-    
+  const display = document.getElementById('members');
+  members.forEach((member) => {
+    const card = document.createElement('section');
     card.innerHTML = `
-      <img src="images/${member.image}" alt="${member.name}" loading="lazy">
-      <h3>${member.name}</h3>
+      <h2>${member.name}</h2>
       <p>${member.address}</p>
       <p>${member.phone}</p>
-      <a href="${member.website}" target="_blank" rel="noopener">Visit Website</a>
+      <a href="${member.website}" target="_blank">Visit Website</a>
+      <img src="images/${member.image}" alt="${member.name} logo">
     `;
-    container.appendChild(card);
+    display.appendChild(card);
   });
 }
 
-// Toggle grid/list class on container
-gridBtn.addEventListener("click", () => {
-  container.classList.add("grid-view");
-  container.classList.remove("list-view");
+getMembers();
+
+
+const gridButton = document.getElementById('grid');
+const listButton = document.getElementById('list');
+const display = document.getElementById('members');
+
+gridButton.addEventListener('click', () => {
+  display.classList.add('grid');
+  display.classList.remove('list');
 });
 
-listBtn.addEventListener("click", () => {
-  container.classList.add("list-view");
-  container.classList.remove("grid-view");
+listButton.addEventListener('click', () => {
+  display.classList.add('list');
+  display.classList.remove('grid');
 });
-
-// Footer info
-document.getElementById("year").textContent = new Date().getFullYear();
-document.getElementById("lastModified").textContent = document.lastModified;
-
-
-fetchMembers();
+document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('lastModified').textContent = document.lastModified;
