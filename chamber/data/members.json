@@ -45,15 +45,15 @@
       "address": "202 Flex Ln",
       "phone": "555-111-2222",
       "website": "https://cityfitness.com",
-      "image": "fitnessclub.png",
+      "image": "city_fitness.png",
       "membership": 1
     },
     {
       "name": "EcoHome Supplies",
       "address": "101 Green St",
       "phone": "555-888-9999",
-      "website": "https://ecohome.com",
-      "image": "ecohome.png",
+      "website": "https://www.mundoecohome.com/",
+      "image": "eco_home.png",
       "membership": 2
     }
   ]
