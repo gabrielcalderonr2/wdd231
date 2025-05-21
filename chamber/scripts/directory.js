@@ -37,20 +37,41 @@ function displayMembers(members) {
     });
 }
 
-// Toggle View
-const gridButton = document.getElementById('grid');
-const listButton = document.getElementById('list');
-const memberContainer = document.getElementById('members');
+const gridButton = document.querySelector("#grid-button");
+const listButton = document.querySelector("#list-button");
+const display = document.querySelector("section.members"); // o el contenedor que uses
 
-gridButton.addEventListener('click', () => {
-    memberContainer.classList.add('grid');
-    memberContainer.classList.remove('list');
+gridButton.addEventListener("click", () => {
+  display.classList.add("grid");
+  display.classList.remove("list");
 });
 
-listButton.addEventListener('click', () => {
-    memberContainer.classList.add('list');
-    memberContainer.classList.remove('grid');
+listButton.addEventListener("click", () => {
+  display.classList.add("list");
+  display.classList.remove("grid");
 });
 
-// Initial Call
+// Obtener los datos del JSON
+const url = "data/members.json";
+
+async function getMembers() {
+  const response = await fetch(url);
+  const data = await response.json();
+  displayMembers(data.members); // asegúrate que el JSON tenga esta estructura
+}
+
+function displayMembers(members) {
+  members.forEach((member) => {
+    let card = document.createElement("div");
+    card.classList.add("member-card");
+    card.innerHTML = `
+      <h3>${member.name}</h3>
+      <p>${member.address}</p>
+      <p>${member.phone}</p>
+      <a href="${member.website}" target="_blank">${member.website}</a>
+    `;
+    display.appendChild(card);
+  });
+}
+
 getMembers();
