@@ -1,19 +1,24 @@
 fetch('data/members.json')
-  .then(res => res.json())
+  .then(response => response.json())
   .then(data => {
-    const spotlights = data.members.filter(m => m.membership === "gold" || m.membership === "silver");
-    const randomSpotlights = spotlights.sort(() => 0.5 - Math.random()).slice(0, 3);
+    const qualified = data.members.filter(member => 
+      member.membership === 'gold' || member.membership === 'silver'
+    );
+
+    const spotlights = qualified.sort(() => 0.5 - Math.random()).slice(0, 3);
     const container = document.getElementById('spotlight-container');
-    randomSpotlights.forEach(biz => {
+
+    spotlights.forEach(member => {
       container.innerHTML += `
         <div class="spotlight">
-          <img src="${biz.logo}" alt="${biz.name} logo">
-          <h3>${biz.name}</h3>
-          <p>${biz.phone}</p>
-          <p>${biz.address}</p>
-          <a href="${biz.website}" target="_blank">${biz.website}</a>
-          <p class="level">${biz.membership}</p>
+          <img src="${member.logo}" alt="${member.name} logo">
+          <h3>${member.name}</h3>
+          <p>${member.phone}</p>
+          <p>${member.address}</p>
+          <a href="${member.website}" target="_blank">${member.website}</a>
+          <p class="level">${member.membership}</p>
         </div>
       `;
     });
-  });
+  })
+  .catch(error => console.error('Spotlight fetch error:', error));
