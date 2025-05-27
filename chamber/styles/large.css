@@ -54,5 +54,7 @@ image1{
   font-weight: bold;
   color: goldenrod;
 }
-
+.hero {
+  text-align: center;
+}
 }
