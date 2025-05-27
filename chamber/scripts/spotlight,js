@@ -1,0 +1,19 @@
+fetch('data/members.json')
+  .then(res => res.json())
+  .then(data => {
+    const spotlights = data.members.filter(m => m.membership === "gold" || m.membership === "silver");
+    const randomSpotlights = spotlights.sort(() => 0.5 - Math.random()).slice(0, 3);
+    const container = document.getElementById('spotlight-container');
+    randomSpotlights.forEach(biz => {
+      container.innerHTML += `
+        <div class="spotlight">
+          <img src="${biz.logo}" alt="${biz.name} logo">
+          <h3>${biz.name}</h3>
+          <p>${biz.phone}</p>
+          <p>${biz.address}</p>
+          <a href="${biz.website}" target="_blank">${biz.website}</a>
+          <p class="level">${biz.membership}</p>
+        </div>
+      `;
+    });
+  });
