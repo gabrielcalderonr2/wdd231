@@ -57,4 +57,44 @@ image1{
 .hero {
   text-align: center;
 }
+.forecast-grid {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.forecast-grid div {
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  width: 30%;
+}
+
+.forecast-grid img {
+  width: 60px;
+  height: 60px;
+}
+.spotlight-grid {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.spotlight-card {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  width: 30%;
+}
+
+.spotlight-card img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
 }
