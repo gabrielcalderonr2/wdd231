@@ -1,21 +1,13 @@
-const url = 'https://api.openweathermap.org/data/2.5/onecall?lat=16.7666&lon=-3.0026&exclude=minutely,hourly,alerts&units=imperial&appid=b3945f9e-3ac4-11f0-89da-0242ac130006-b3945ff8-3ac4-11f0-89da-0242ac130006';
+const apiKey = 'cd19c64935e49959d56ac2fdb524bb39';
+const city = 'San%20Miguel';
+const weatherUrl = 'https://api.openweathermap.org/data/2.5/weather?q=San%20Miguel,US&appid=cd19c64935e49959d56ac2fdb524bb39';
 
-fetch(url)
+fetch(weatherUrl)
   .then(response => response.json())
   .then(data => {
-    const currentTemp = data.current.temp;
-    const description = data.current.weather[0].description;
-
-    document.getElementById('current-weather').innerHTML = `
-      <p>${currentTemp}°F</p>
-      <p>${description}</p>
-    `;
-
-    const forecastDiv = document.getElementById('forecast');
-    for (let i = 1; i <= 3; i++) {
-      const day = data.daily[i];
-      const date = new Date(day.dt * 1000);
-      forecastDiv.innerHTML += `<p>${date.toLocaleDateString(undefined, { weekday: 'long' })}: ${day.temp.day}°F</p>`;
-    }
+    const temperature = data.main.temp;
+    const description = data.weather[0].description;
+    document.getElementById('current-temp').textContent = `${temperature}°C`;
+    document.getElementById('weather-desc').textContent = description;
   })
-  .catch(error => console.error('Weather fetch error:', error));
+  .catch(error => console.error('Error fetching current weather:', error));
