@@ -96,5 +96,45 @@ image1{
   height: auto;
   margin-bottom: 0.5rem;
 }
+/* CSS */
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.spotlight {
+  background-color: #f0f0f0;
+  padding: 20px;
+  margin: 10px;
+  flex: 1;
+}
+#forecast-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-around;
+  flex-wrap: wrap; 
+}
 
+#forecast-container div {
+  background-color: #f0f0f0;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  flex: 1;
+  min-width: 150px; 
+}
+body {
+  max-width: 1200px;     
+  margin: 0 auto;         
+  padding: 1rem;          
+  background-color: #fff; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+
+/* Optional: background outside the box */
+body {
+  background-color: #eaeaea;
+}
 }

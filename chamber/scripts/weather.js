@@ -12,7 +12,7 @@ async function fetchWeather() {
     const response = await fetch(weatherUrl);
     const data = await response.json();
 
-    document.getElementById('current-temp').textContent = `${data.main.temp} °C`;
+    document.getElementById('current-weather').textContent = `${data.main.temp} °C`;
     document.getElementById('weather-desc').textContent = data.weather[0].description;
     document.getElementById('weather-icon').src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
     document.getElementById('weather-icon').alt = data.weather[0].description;
