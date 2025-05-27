@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Chamber of Commerce Home" />
+  <meta property="og:title" content="Chamber of Commerce" />
+  <meta property="og:description" content="Join the Chamber of Commerce." />
+  <meta property="og:image" content="images/social-share.png" />
+  <meta name="author" content="Gabriel Calderon" />
+  <title>San Miguel Chamber of Commerce</title>
+  <link rel="stylesheet" href="styles/normalize.css" />
+  <link rel="stylesheet" href="styles/small.css" />
+  <link rel="stylesheet" href="styles/large.css" media="screen and (min-width: 768px)" />
+<link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  
+  <script src="scripts/directory.js" defer></script>
+  <script type="module" src="scripts/home.js"></script>
+</head>
+<body>
+  <header>
+    <img class="image1" src="images/gabriel_calderon.jpg" alt="Gabriel" />
+    <button id="menu-toggle">☰</button>
+    <nav>
+     <ul id="nav-menu">
+  <li><a href="../index.html">Home</a></li>
+  <li><a href="directory.html">Chamber</a></li>
+  <li><a href="#">Final Project</a></li>
+  <li><a href="#">GitHub</a></li>
+  <li><a href="#">LinkedIn</a></li>
+</ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Home</h1>
+    <div class="view-toggle">
+  <button id="grid-button">Grid View</button>
+  <button id="list-button">List View</button>
+</div>
+
+<section id="weather"> ... </section>
+<section id="spotlights"> ... </section>
+
+<section class="members grid"></section>
+<section class="spotlights">
+  <h2>Business Spotlights</h2>
+  <div class="spotlight-cards" id="spotlights"></div>
+</section>
+    <div id="directory-container" class="grid-view"></div>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Gabriel Calderon, WDD 231</p>
+    <p>Last Modified: <span id="lastModified"></span></p>
+  </footer>
+
+
+
+</body>
+</html>

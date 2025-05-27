@@ -6,7 +6,7 @@
       "phone": "555-123-4567",
       "website": "https://sunrisebakery.com",
       "image": "sunrise.png",
-      "membership": 3
+      "membership": "gold"
     },
     {
       "name": "Mountain View Tech",
@@ -14,7 +14,7 @@
       "phone": "555-987-6543",
       "website": "https://mvtp.pk/",
       "image": "mvtech.png",
-      "membership": 2
+      "membership": "gold"
     },
     {
       "name": "GreenLeaf Grocers",
@@ -22,7 +22,7 @@
       "phone": "555-222-3333",
       "website": "https://greenleafgrocers.com",
       "image": "greenleaf.png",
-      "membership": 1
+      "membership": "silver"
     },
     {
       "name": "Oceanic Travel",
@@ -30,7 +30,7 @@
       "phone": "555-444-5555",
       "website": "https://www.opt.viajes/es",
       "image": "oceanic.png",
-      "membership": 3
+      "membership": "bronze"
     },
     {
       "name": "Bright Minds Tutoring",
@@ -38,7 +38,7 @@
       "phone": "555-777-8888",
       "website": "https://brightminds.com",
       "image": "brightminds.png",
-      "membership": 2
+      "membership": "bronze"
     },
     {
       "name": "City Fitness Club",
@@ -46,7 +46,7 @@
       "phone": "555-111-2222",
       "website": "https://cityfitness.com",
       "image": "city_fitness.png",
-      "membership": 1
+      "membership": "bronze"
     },
     {
       "name": "EcoHome Supplies",
@@ -54,7 +54,7 @@
       "phone": "555-888-9999",
       "website": "https://www.mundoecohome.com/",
       "image": "eco_home.png",
-      "membership": 2
+      "membership": "bronze"
     }
   ]
 }
