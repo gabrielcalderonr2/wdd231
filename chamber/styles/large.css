@@ -125,16 +125,46 @@ image1{
   min-width: 150px; 
 }
 body {
-  max-width: 1200px;     
-  margin: 0 auto;         
-  padding: 1rem;          
-  background-color: #fff; 
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #fff;
 }
-
 
 /* Optional: background outside the box */
 body {
   background-color: #eaeaea;
 }
+}
+@media (min-width: 1025px) {
+  .discover-grid {
+    grid-template-areas:
+      "sidebar card1 card2 card3"
+      "sidebar card4 card5 card6"
+      "sidebar card7 card8 . .";
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .card img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+}
+@media screen and (min-width: 768px) {
+  .discover-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .discover-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }

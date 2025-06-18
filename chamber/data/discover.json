@@ -1,0 +1,50 @@
+[
+  {
+    "title": "La Carolina Park",
+    "image": "images/carolina.png",
+    "address": "Av. De los Shyris, Quito, Ecuador",
+    "description": "A large urban park in the heart of Quito with gardens, lakes, and sports fields."
+  },
+  {
+    "title": "Middle of the World",
+    "image": "images/mitadmundo.png",
+    "address": "San Antonio, Quito, Ecuador",
+    "description": "A famous monument located directly on the Equator line, offering science and history exhibits."
+  },
+  {
+    "title": "Basilica of the National Vow",
+    "image": "images/basilica.png",
+    "address": "Carchi & Venezuela, Quito, Ecuador",
+    "description": "A neo-Gothic style basilica known for its incredible views of Quito from the towers."
+  },
+  {
+    "title": "Otavalo Market",
+    "image": "images/otavalo.png",
+    "address": "Plaza de los Ponchos, Otavalo, Ecuador",
+    "description": "One of the largest and most colorful indigenous markets in South America."
+  },
+  {
+    "title": "Baños Waterfalls",
+    "image": "images/banos.png",
+    "address": "Baños de Agua Santa, Ecuador",
+    "description": "A natural paradise famous for its hot springs, waterfalls, and adventure sports."
+  },
+  {
+    "title": "Malecon 2000",
+    "image": "images/malecon.png",
+    "address": "Av. Malecón Simón Bolívar, Guayaquil, Ecuador",
+    "description": "A scenic riverfront boardwalk with shops, gardens, monuments, and family-friendly attractions."
+  },
+  {
+    "title": "Ingapirca Ruins",
+    "image": "images/ingapirca.png",
+    "address": "Cañar Province, Ecuador",
+    "description": "The largest known Inca ruins in Ecuador, showcasing pre-Columbian architecture and culture."
+  },
+  {
+    "title": "Cuenca Historic Center",
+    "image": "images/cuenca.png",
+    "address": "Cuenca, Azuay, Ecuador",
+    "description": "A UNESCO World Heritage Site with colonial architecture, museums, and cobbled streets."
+  }
+]
