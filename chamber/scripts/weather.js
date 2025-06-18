@@ -1,7 +1,7 @@
-const apiKey = '82f7e5a3ab38ba04671c94cdbf06ae11'; // Replace with your actual API key
+const apiKey = '82f7e5a3ab38ba04671c94cdbf06ae11';
 const lat = 35.7525;
 const lon = -120.6971;
-const units = 'metric'; // Use 'imperial' for Fahrenheit
+const units = 'metric'; 
 
 // URLs for current weather and 5-day forecast
 const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;

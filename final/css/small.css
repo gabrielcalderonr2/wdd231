@@ -1,0 +1,38 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #F4F4F4;
+  color: #333;
+  padding: 1rem;
+}
+
+header {
+  background-color: #003366;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+h1, h2 {
+  font-family: 'Montserrat', sans-serif;
+  color: #003366;
+}
+
+.color-box {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+  border: 1px solid #ccc;
+}
+
+.color-box.blue { background-color: #003366; }
+.color-box.orange { background-color: #FF6600; }
+.color-box.gray { background-color: #F4F4F4; }
+
+img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ccc;
+  margin-top: 0.5rem;
+}

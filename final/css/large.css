@@ -1,0 +1,12 @@
+body {
+  padding: 2rem 10%;
+}
+
+main {
+  max-width: 1000px;
+  margin: auto;
+}
+
+section {
+  margin-bottom: 2rem;
+}
