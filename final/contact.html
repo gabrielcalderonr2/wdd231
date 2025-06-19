@@ -116,6 +116,7 @@
     
     .form-group {
       margin-bottom: 1.5rem;
+      position: relative;
     }
     
     label {
@@ -180,6 +181,18 @@
       font-size: 1.1rem;
       line-height: 1.6;
     }
+    
+    /* Error message styles */
+    .error-message {
+      color: #d32f2f;
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+      display: block;
+    }
+    
+    .error-field {
+      border-color: #d32f2f !important;
+    }
   </style>
 </head>
 
@@ -217,6 +230,7 @@
         <div class="form-group">
           <label for="email">Email Address:</label>
           <input type="email" id="email" name="email" required>
+          <span id="emailError" class="error-message"></span>
         </div>
         
         <div class="form-group">
@@ -259,10 +273,10 @@
   <footer>
     <p>&copy; <span id="currentYear"></span> Premium Auto. All rights reserved.</p>
     <p><span id="lastModified"></span></p>
-    
   </footer>
 
   <script>
+    // Set current year and last modified date
     document.getElementById("currentYear").textContent = new Date().getFullYear();
     document.getElementById("lastModified").textContent = `Last Modified: ${document.lastModified}`;
 
@@ -271,22 +285,54 @@
       document.querySelector('.nav-links').classList.toggle('active');
     });
 
-    // Form submission handling
+    // Form submission with try/catch error handling
     document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault(); // Prevent the default form submission
+      e.preventDefault();
       
-     
-      this.style.display = 'none';
-      document.getElementById('thankYouMessage').style.display = 'block';
-      
-      
-      setTimeout(() => {
-        this.reset();
-        this.style.display = 'block';
-        document.getElementById('thankYouMessage').style.display = 'none';
-      }, 5000); // Reset after 5 seconds (optional)
+      try {
+        // Validate email
+        const email = document.getElementById('email').value.trim();
+        if (!email) {
+          throw new Error('Email is required');
+        }
+        
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          throw new Error('Please enter a valid email address');
+        }
+        
+        // Clear any previous errors
+        document.getElementById('email').classList.remove('error-field');
+        document.getElementById('emailError').textContent = '';
+        
+        // If validation passes, show thank you message
+        this.style.display = 'none';
+        document.getElementById('thankYouMessage').style.display = 'block';
+        
+        // Reset form after 5 seconds (for demo purposes)
+        setTimeout(() => {
+          this.reset();
+          this.style.display = 'block';
+          document.getElementById('thankYouMessage').style.display = 'none';
+        }, 5000);
+        
+      } catch (error) {
+        // Display error to user
+        document.getElementById('email').classList.add('error-field');
+        document.getElementById('emailError').textContent = error.message;
+        
+        // Scroll to error field
+        document.getElementById('email').scrollIntoView({
+          behavior: 'smooth',
+          block: 'center'
+        });
+      }
+    });
+
+    // Clear error when user starts typing
+    document.getElementById('email').addEventListener('input', function() {
+      this.classList.remove('error-field');
+      document.getElementById('emailError').textContent = '';
     });
   </script>
 </body>
-
 </html>
