@@ -1,12 +1,105 @@
-body {
-  padding: 2rem 10%;
+/* large.css - Desktop styles (min-width: 768px) */
+@media (min-width: 768px) {
+    /* Layout and Structure */
+    header {
+        grid-template-areas: "logo nav";
+        padding: 1rem 2rem;
+    }
+
+    main {
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* Typography */
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+
+    /* Navigation */
+    .hamburger {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        padding: 0;
+    }
+
+    .nav-links li {
+        margin-left: 1.5rem;
+    }
+
+    /* Logo */
+    .logo {
+        height: 60px;
+    }
+
+    /* Vehicle Grid */
+    .vehicle-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+
+    /* Buttons */
+    .type-buttons {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .type-btn, .details-btn {
+        width: auto;
+        padding: 0.75rem 1.5rem;
+    }
+
+    /* Modal */
+    .modal-content {
+        margin: 10% auto;
+        width: 80%;
+        max-width: 600px;
+        padding: 2rem;
+    }
+    .type-btn.active {
+    background-color: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
 }
 
-main {
-  max-width: 1000px;
-  margin: auto;
+    /* Search Container */
+    .search-container {
+        max-width: 600px;
+        margin: 1.5rem auto;
+    }
+
+    /* Footer */
+    footer {
+        padding: 1.5rem;
+    }
+
+    /* Active state for filter buttons */
+.type-btn.active {
+    background-color: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
 }
 
-section {
-  margin-bottom: 2rem;
+/* Vehicle card transitions */
+.vehicle-card {
+    transition: all 0.3s ease;
+}
+
+/* Ensure hidden vehicles don't take up space */
+.vehicle-card[style*="display: none"] {
+    display: none !important;
+}
+
+.type-category[style*="display: none"] {
+    display: none !important;
+}
 }

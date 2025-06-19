@@ -1,38 +1,343 @@
+/* small.css - Mobile styles (default) */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #e74c3c;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+    --success-color: #27ae60;
+}
+
 body {
-  font-family: 'Open Sans', sans-serif;
-  background-color: #F4F4F4;
-  color: #333;
-  padding: 1rem;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
 }
 
 header {
-  background-color: #003366;
-  color: white;
-  padding: 1rem;
-  text-align: center;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    display: grid;
+    grid-template-areas: 
+        "logo hamburger"
+        "nav nav";
+    align-items: center;
 }
 
-h1, h2 {
-  font-family: 'Montserrat', sans-serif;
-  color: #003366;
+.logo-container {
+    grid-area: logo;
 }
 
-.color-box {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  margin-right: 8px;
-  vertical-align: middle;
-  border: 1px solid #ccc;
+.logo {
+    height: 50px;
 }
 
-.color-box.blue { background-color: #003366; }
-.color-box.orange { background-color: #FF6600; }
-.color-box.gray { background-color: #F4F4F4; }
+nav {
+    grid-area: nav;
+}
 
-img {
-  max-width: 100%;
-  height: auto;
-  border: 1px solid #ccc;
-  margin-top: 0.5rem;
+.hamburger {
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    justify-self: end;
+}
+
+.nav-links {
+    display: none;
+    list-style: none;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem 0;
+}
+
+.nav-links.active {
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0.5rem 0;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: var(--secondary-color);
+}
+
+main {
+    padding: 1rem;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding: 1.5rem 0;
+    background-color: var(--light-color);
+    border-radius: 8px;
+}
+
+.search-container {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+#searchInput {
+    padding: 0.5rem;
+    width: 70%;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+}
+
+#searchBtn {
+    padding: 0.5rem 1rem;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+.featured, .vehicle-types {
+    margin: 1.5rem 0;
+}
+
+.vehicle-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.vehicle-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.vehicle-image {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    loading: lazy;
+}
+
+.vehicle-info {
+    padding: 1rem;
+}
+
+.vehicle-info h3 {
+    margin-bottom: 0.5rem;
+    color: var(--dark-color);
+}
+
+.price {
+    font-weight: bold;
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+}
+
+.type-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.type-btn, .details-btn {
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+footer {
+    background-color: var(--dark-color);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+footer a {
+    color: var(--light-color);
+}
+
+/* Modal styles for mobile */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 20% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%;
+    border-radius: 8px;
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
+
+:root {
+    --primary-color: #1a4b6d;  /* Deep blue */
+    --secondary-color: #e63946; /* Vibrant red */
+    --accent-color: #457b9d;   /* Medium blue */
+    --light-color: #f1faee;    /* Light cream */
+    --dark-color: #1d3557;     /* Dark blue */
+    --text-color: #2b2d42;     /* Dark gray-blue */
+    --background-color: #ffffff; /* White */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+h1, h2, h3 {
+    font-family: 'Lora', serif;
+    font-weight: 600;
+    color: var(--dark-color);
+}
+.featured {
+    margin: 2rem 0;
+}
+
+.vehicle-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.vehicle-card {
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vehicle-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.vehicle-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.vehicle-info {
+    padding: 1.2rem;
+}
+
+.vehicle-info h3 {
+    margin: 0 0 0.5rem 0;
+    color: var(--dark-color);
+    font-size: 1.25rem;
+}
+
+.vehicle-info p {
+    margin: 0.3rem 0;
+    color: var(--text-color);
+    font-size: 0.9rem;
+}
+
+.price {
+    font-weight: bold;
+    color: var(--secondary-color);
+    font-size: 1.3rem;
+    margin: 0.5rem 0;
+}
+
+.details-btn {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.details-btn:hover {
+    background-color: var(--accent-color);
+}
+
+/* Vehicle Types Section */
+.vehicle-types {
+    margin: 3rem 0;
+}
+
+.type-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin: 1.5rem 0;
+    justify-content: center;
+}
+
+.type-btn {
+    padding: 0.7rem 1.4rem;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    border: 1px solid var(--accent-color);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.type-btn:hover, .type-btn.active {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.type-display {
+    margin-top: 2rem;
+}
+
+.type-category {
+    margin-bottom: 2.5rem;
+}
+
+.type-category h3 {
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    color: var(--dark-color);
 }

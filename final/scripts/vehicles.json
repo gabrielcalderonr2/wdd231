@@ -1,0 +1,148 @@
+{
+  "vehicles": [
+    {
+      "id": 1,
+      "name": "Toyota Corolla",
+      "type": "Sedan",
+      "price": "$18,000",
+      "year": "2022",
+      "image": "images/corolla.jpg",
+      "description": "Reliable, efficient, and comfortable."
+    },
+    {
+      "id": 2,
+      "name": "Honda Civic",
+      "type": "Sedan",
+      "price": "$19,500",
+      "year": "2023",
+      "image": "images/civic.jpg",
+      "description": "Sporty design with advanced safety features."
+    },
+    {
+      "id": 3,
+      "name": "Ford F-150",
+      "type": "Truck",
+      "price": "$32,000",
+      "year": "2022",
+      "image": "images/f150.jpg",
+      "description": "Powerful pickup with impressive towing capacity."
+    },
+    {
+      "id": 4,
+      "name": "Chevrolet Tahoe",
+      "type": "SUV",
+      "price": "$48,000",
+      "year": "2023",
+      "image": "images/tahoe.jpg",
+      "description": "Spacious SUV with luxury features."
+    },
+    {
+      "id": 5,
+      "name": "Tesla Model 3",
+      "type": "Sedan",
+      "price": "$39,990",
+      "year": "2023",
+      "image": "images/model3.jpg",
+      "description": "All-electric sedan with cutting-edge technology."
+    },
+    {
+      "id": 6,
+      "name": "Jeep Wrangler",
+      "type": "SUV",
+      "price": "$31,000",
+      "year": "2022",
+      "image": "images/wrangler.jpg",
+      "description": "Iconic off-road SUV for adventure seekers."
+    },
+    {
+      "id": 7,
+      "name": "BMW X5",
+      "type": "SUV",
+      "price": "$60,000",
+      "year": "2023",
+      "image": "images/x5.jpg",
+      "description": "Luxury SUV with performance and style."
+    },
+    {
+      "id": 8,
+      "name": "Audi A4",
+      "type": "Sedan",
+      "price": "$41,000",
+      "year": "2023",
+      "image": "images/a4.jpg",
+      "description": "Premium sedan with advanced infotainment."
+    },
+    {
+      "id": 9,
+      "name": "Subaru Outback",
+      "type": "Wagon",
+      "price": "$28,500",
+      "year": "2022",
+      "image": "images/outback.jpg",
+      "description": "Versatile wagon with all-wheel drive."
+    },
+    {
+      "id": 10,
+      "name": "Hyundai Tucson",
+      "type": "SUV",
+      "price": "$26,000",
+      "year": "2023",
+      "image": "images/tucson.jpg",
+      "description": "Compact SUV with modern features."
+    },
+    {
+      "id": 11,
+      "name": "Chevrolet Camaro",
+      "type": "Coupe",
+      "price": "$27,500",
+      "year": "2022",
+      "image": "images/camaro.jpg",
+      "description": "Classic American muscle car."
+    },
+    {
+      "id": 12,
+      "name": "Kia Soul",
+      "type": "Hatchback",
+      "price": "$19,000",
+      "year": "2023",
+      "image": "images/soul.jpg",
+      "description": "Unique design with spacious interior."
+    },
+    {
+      "id": 13,
+      "name": "Mazda CX-5",
+      "type": "SUV",
+      "price": "$29,000",
+      "year": "2023",
+      "image": "images/cx5.jpg",
+      "description": "Stylish SUV with responsive handling."
+    },
+    {
+      "id": 14,
+      "name": "Volkswagen Golf",
+      "type": "Hatchback",
+      "price": "$23,500",
+      "year": "2022",
+      "image": "images/golf.jpg",
+      "description": "Compact hatchback with European flair."
+    },
+    {
+      "id": 15,
+      "name": "Ram 1500",
+      "type": "Truck",
+      "price": "$35,000",
+      "year": "2023",
+      "image": "images/ram1500.jpg",
+      "description": "Durable truck with a smooth ride."
+    },
+    {
+      "id": 16,
+      "name": "Nissan Leaf",
+      "type": "Hatchback",
+      "price": "$28,000",
+      "year": "2023",
+      "image": "images/leaf.jpg",
+      "description": "Affordable all-electric hatchback."
+    }
+  ]
+}

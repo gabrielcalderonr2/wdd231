@@ -1,77 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Website Plan - DriveSure Motors</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premium Auto Sales - Find your dream car at competitive prices">
+    <meta name="author" content="Gabriel Calderon">
+    <meta property="og:title" content="Premium Auto Sales">
+    <meta property="og:description" content="Find quality vehicles at great prices">
+    <title>Premium Auto Sales | Home</title>
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/small.css">
+    <link rel="stylesheet" href="css/large.css" media="(min-width: 768px)">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        /* Active state for filter buttons */
+        .type-btn.active {
+            background-color: #457b9d;
+            color: white;
+            border-color: #457b9d;
+        }
 
-  <link rel="stylesheet" href="css/small.css">
-  <link rel="stylesheet" href="css/large.css" media="screen and (min-width: 768px)">
-  <script src="js/script.js" defer></script>
+        /* Vehicle card transitions */
+        .vehicle-card {
+            transition: all 0.3s ease;
+        }
+
+        /* Ensure hidden vehicles don't take up space */
+        .vehicle-card[style*="display: none"] {
+            display: none !important;
+        }
+
+        .type-category[style*="display: none"] {
+            display: none !important;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <div class="logo-container">
+            <img src="img/logo_auto2.PNG" alt="Premium Auto Sales Logo" class="logo">
+        </div>
+        <nav>
+            <button class="hamburger">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="vehicles.html">Vehicles</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <header>
-    <h1>Website Plan - DriveSure Motors</h1>
-  </header>
+    <main>
+        <section class="hero">
+            <h1>Find Your Perfect Vehicle</h1>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search by make, model, or type...">
+                <button id="searchBtn">Search</button>
+            </div>
+        </section>
 
-  <main>
-    <section>
-      <h2>Site Name</h2>
-      <p><strong>DriveSure Motors</strong></p>
-      <p>
-        This name conveys reliability and mobility. It’s professional, memorable, and fits the automotive industry.
-        <br><em>Optional domain:</em> drivesuremotors.com
-      </p>
-    </section>
+        <section class="featured">
+            <h2>Featured Vehicles</h2>
+            <div class="vehicle-grid" id="featuredVehicles">
+                <!-- GMC Truck -->
+                <div class="vehicle-card" data-vehicle-type="truck">
+                    <img src="img/gmc_truck.png" alt="GMC Canyon" class="vehicle-image">
+                    <div class="vehicle-info">
+                        <h3>GMC Canyon</h3>
+                        <p>2025 Model | 15,000 miles</p>
+                        <p class="price">$36,000</p>
+                        <a href="vehicles.html?vehicle=gmc_canyon" class="details-btn">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Toyota Truck -->
+                <div class="vehicle-card" data-vehicle-type="truck">
+                    <img src="img/toyota_truck.png" alt="Toyota Tundra" class="vehicle-image">
+                    <div class="vehicle-info">
+                        <h3>Toyota Tundra</h3>
+                        <p>2024 Model | 22,500 miles</p>
+                        <p class="price">$58,981</p>
+                        <a href="vehicles.html?vehicle=toyota_tundra" class="details-btn">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Additional Featured Vehicles -->
+                <div class="vehicle-card" data-vehicle-type="suv">
+                    <img src="img/honda_crv.png" alt="Honda CR-V" class="vehicle-image">
+                    <div class="vehicle-info">
+                        <h3>Honda CR-V</h3>
+                        <p>2023 Model | 18,000 miles</p>
+                        <p class="price">$28,500</p>
+                        <a href="vehicles.html?vehicle=honda_crv" class="details-btn">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="vehicle-card" data-vehicle-type="sedan">
+                    <img src="img/toyota_camry.jpg" alt="Toyota Camry" class="vehicle-image">
+                    <div class="vehicle-info">
+                        <h3>Toyota Camry</h3>
+                        <p>2024 Model | 12,000 miles</p>
+                        <p class="price">$26,800</p>
+                        <a href="vehicles.html?vehicle=toyota_camry" class="details-btn">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section>
-      <h2>Site Purpose</h2>
-      <p>
-        DriveSure Motors provides a digital platform to browse and shop for quality used cars. Visitors can view detailed listings, search/filter by car type, explore financing options, read car buying tips, and schedule test drives.
-      </p>
-    </section>
+        <section class="vehicle-types">
+            <h2>Browse By Type</h2>
+            <div class="type-buttons">
+                <button class="type-btn active" data-type="all">All Vehicles</button>
+                <button class="type-btn" data-type="sedan">Sedans</button>
+                <button class="type-btn" data-type="suv">SUVs</button>
+                <button class="type-btn" data-type="truck">Trucks</button>
+            </div>
+            
+            <div class="type-display">
+                <!-- Sedans Section -->
+                <div class="type-category" id="sedans">
+                    <h3>Sedans</h3>
+                    <div class="vehicle-grid">
+                        <div class="vehicle-card" data-vehicle-type="sedan">
+                            <img src="img/toyota_camry.jpg" alt="Toyota Camry" class="vehicle-image">
+                            <div class="vehicle-info">
+                                <h3>Toyota Camry</h3>
+                                <p>2024 Model | 12,000 miles</p>
+                                <p class="price">$26,800</p>
+                                <a href="vehicles.html?vehicle=toyota_camry" class="details-btn">View Details</a>
+                            </div>
+                        </div>
+                        <div class="vehicle-card" data-vehicle-type="sedan">
+                            <img src="img/hoda_accord.png" alt="Honda Accord" class="vehicle-image">
+                            <div class="vehicle-info">
+                                <h3>Honda Accord</h3>
+                                <p>2023 Model | 20,000 miles</p>
+                                <p class="price">$25,900</p>
+                                <a href="vehicles.html?vehicle=honda_accord" class="details-btn">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- SUVs Section -->
+                <div class="type-category" id="suvs">
+                    <h3>SUVs</h3>
+                    <div class="vehicle-grid">
+                        <div class="vehicle-card" data-vehicle-type="suv">
+                            <img src="img/honda_crv.png" alt="Honda CR-V" class="vehicle-image">
+                            <div class="vehicle-info">
+                                <h3>Honda CR-V</h3>
+                                <p>2023 Model | 18,000 miles</p>
+                                <p class="price">$28,500</p>
+                                <a href="vehicles.html?vehicle=honda_crv" class="details-btn">View Details</a>
+                            </div>
+                        </div>
+                        <div class="vehicle-card" data-vehicle-type="suv">
+                            <img src="img/toyota_rav.png" alt="Toyota RAV4" class="vehicle-image">
+                            <div class="vehicle-info">
+                                <h3>Toyota RAV4</h3>
+                                <p>2024 Model | 10,000 miles</p>
+                                <p class="price">$30,200</p>
+                                <a href="vehicles.html?vehicle=toyota_rav4" class="details-btn">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Trucks Section -->
+                <div class="type-category" id="trucks">
+                    <h3>Trucks</h3>
+                    <div class="vehicle-grid">
+                        <div class="vehicle-card" data-vehicle-type="truck">
+                            <img src="img/gmc_truck.png" alt="GMC Canyon" class="vehicle-image">
+                            <div class="vehicle-info">
+                                <h3>GMC Canyon</h3>
+                                <p>2025 Model | 15,000 miles</p>
+                                <p class="price">$36,000</p>
+                                <a href="vehicles.html?vehicle=gmc_canyon" class="details-btn">View Details</a>
+                            </div>
+                        </div>
+                        <div class="vehicle-card" data-vehicle-type="truck">
+                            <img src="img/toyota_truck.png" alt="Toyota Tundra" class="vehicle-image">
+                            <div class="vehicle-info">
+                                <h3>Toyota Tundra</h3>
+                                <p>2024 Model | 22,500 miles</p>
+                                <p class="price">$58,981</p>
+                                <a href="vehicles.html?vehicle=toyota_tundra" class="details-btn">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <section>
-      <h2>Scenarios</h2>
-      <ul>
-        <li>Where can I find an affordable SUV with low mileage near me?</li>
-        <li>What financing options are available for first-time car buyers?</li>
-        <li>How can I schedule a test drive for a listed vehicle?</li>
-      </ul>
-    </section>
+    <footer>
+        <p>&copy; <span id="currentYear"></span> Premium Auto Sales </p>
+        <p><span id="lastModified"></span></p>
+    </footer>
 
-    <section>
-      <h2>Color Schema</h2>
-      <div class="color">
-        <span class="color-box blue"></span> <strong>Midnight Blue (#003366)</strong> – Navigation, header, footer
-      </div>
-      <div class="color">
-        <span class="color-box orange"></span> <strong>Bright Orange (#FF6600)</strong> – Buttons, highlights
-      </div>
-      <div class="color">
-        <span class="color-box gray"></span> <strong>Light Gray (#F4F4F4)</strong> – Background, cards
-      </div>
-    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year and last modified date
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            document.getElementById('lastModified').textContent = `Last Modified: ${document.lastModified}`;
 
-    <section>
-      <h2>Typography</h2>
-      <ul>
-        <li><strong>Montserrat (sans-serif):</strong> Used for all headings and buttons</li>
-        <li><strong>Open Sans (sans-serif):</strong> Used for paragraph text and navigation</li>
-      </ul>
-    </section>
+            // Hamburger menu toggle
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            if (hamburger && navLinks) {
+                hamburger.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                });
+            }
 
-    <section class="wireframe">
-      <h2>Wireframes</h2>
+            // Get all vehicle cards from both featured and category sections
+            const allVehicles = Array.from(document.querySelectorAll('.vehicle-card'));
+            
+            // Search functionality
+            const searchBtn = document.getElementById('searchBtn');
+            const searchInput = document.getElementById('searchInput');
 
-      <h3>Mobile View</h3>
-      <img src="img/wireframe-mobile.png" alt="Wireframe for Mobile View">
+            function performSearch() {
+                const searchTerm = searchInput.value.toLowerCase().trim();
+                
+                allVehicles.forEach(function(vehicle) {
+                    const vehicleName = vehicle.querySelector('h3').textContent.toLowerCase();
+                    const vehicleInfo = vehicle.querySelectorAll('p:not(.price)');
+                    let vehicleText = vehicleName;
+                    
+                    // Include all text content except price in search
+                    vehicleInfo.forEach(function(info) {
+                        vehicleText += ' ' + info.textContent.toLowerCase();
+                    });
 
-      <h3>Desktop View</h3>
-      <img src="img/wireframe-desktop.png" alt="Wireframe for Desktop View">
-    </section>
-  </main>
+                    if (searchTerm === '' || vehicleText.includes(searchTerm)) {
+                        vehicle.style.display = 'block';
+                        vehicle.closest('.type-category').style.display = 'block';
+                    } else {
+                        vehicle.style.display = 'none';
+                    }
+                });
+            }
 
+            if (searchBtn && searchInput) {
+                searchBtn.addEventListener('click', performSearch);
+                searchInput.addEventListener('keyup', function(e) {
+                    if (e.key === 'Enter') performSearch();
+                });
+            }
+
+            // Browse by type functionality
+            const typeButtons = document.querySelectorAll('.type-btn');
+
+            typeButtons.forEach(function(button) {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    typeButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Get the type to filter by
+                    const type = this.dataset.type;
+                    
+                    // Filter vehicles
+                    filterVehicles(type);
+                });
+            });
+
+            function filterVehicles(type) {
+                allVehicles.forEach(function(vehicle) {
+                    if (type === 'all') {
+                        vehicle.style.display = 'block';
+                        if (vehicle.closest('.type-category')) {
+                            vehicle.closest('.type-category').style.display = 'block';
+                        }
+                    } else {
+                        const shouldShow = vehicle.dataset.vehicleType === type;
+                        vehicle.style.display = shouldShow ? 'block' : 'none';
+                        
+                        // Show/hide entire category sections
+                        const category = vehicle.closest('.type-category');
+                        if (category) {
+                            category.style.display = shouldShow ? 'block' : 'none';
+                        }
+                    }
+                });
+            }
+
+            // Initialize - show all vehicles
+            filterVehicles('all');
+        });
+    </script>
 </body>
 </html>

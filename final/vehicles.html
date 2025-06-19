@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Vehicle details page for Premium Auto Sales." />
+  <meta name="author" content="Gabriel Calderon" />
+  <meta property="og:title" content="Premium Auto Sales | Vehicle Details" />
+  <meta property="og:description" content="Explore detailed specifications of each vehicle." />
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/small.css">
+  <link rel="stylesheet" href="css/large.css" media="(min-width: 768px)">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <title>Premium Auto Sales | Vehicle Details</title>
+  <style>
+    /* Vehicle Details Specific Styles */
+    .vehicle-details {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-bottom: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: #1a4b6d;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 500;
+      transition: background-color 0.3s;
+    }
+
+    .back-button:hover {
+      background-color: #0d3a5c;
+    }
+
+    .back-button::before {
+      content: "← ";
+    }
+
+    .vehicle-card {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    .vehicle-image {
+      width: 100%;
+      max-height: 500px;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .vehicle-info {
+      background-color: #f8f9fa;
+      padding: 1.5rem;
+      border-radius: 8px;
+    }
+
+    .vehicle-info h2 {
+      color: #1a4b6d;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #457b9d;
+      padding-bottom: 0.5rem;
+    }
+
+    .vehicle-info p {
+      margin-bottom: 0.8rem;
+      line-height: 1.6;
+    }
+
+    .vehicle-info strong {
+      color: #1d3557;
+    }
+
+    .details-btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #0066cc;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 500;
+      transition: background-color 0.3s;
+    }
+
+    .details-btn:hover {
+      background-color: #0052a3;
+    }
+
+    @media (min-width: 768px) {
+      .vehicle-card {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="img/logo_auto2.PNG" alt="Premium Auto Sales Logo" class="logo">
+    </div>
+    <nav>
+      <button class="hamburger">☰</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="vehicles.html" class="active">Vehicles</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="vehicle-details">
+      <a href="index.html" class="back-button">Back to Vehicles</a>
+      <h1 id="vehicle-title">Vehicle Details</h1>
+      <div id="vehicle-info">
+        <!-- Vehicle details will be dynamically injected here -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="currentYear"></span> Premium Auto Sales. All rights reserved.</p>
+    <p><span id="lastModified"></span></p>
+   
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Set current year and last modified date
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+      document.getElementById('lastModified').textContent = `Last Modified: ${document.lastModified}`;
+
+      // Hamburger menu toggle
+      const hamburger = document.querySelector('.hamburger');
+      const navLinks = document.querySelector('.nav-links');
+      if (hamburger && navLinks) {
+        hamburger.addEventListener('click', function() {
+          navLinks.classList.toggle('active');
+        });
+      }
+
+      // Get vehicle parameter from URL
+      const params = new URLSearchParams(window.location.search);
+      const vehicleKey = params.get('vehicle');
+
+      // Vehicle database
+      const vehicleData = {
+        toyota_camry: {
+          name: "Toyota Camry",
+          year: 2024,
+          mileage: "12,000 miles",
+          price: "$26,800",
+          type: "Sedan",
+          color: "Silver",
+          features: ["Bluetooth", "Navigation", "Leather Seats", "Sunroof"],
+          img: "img/toyota_camry.jpg",
+          description: "The Toyota Camry offers a perfect blend of comfort, reliability, and efficiency. With its spacious interior and smooth ride, it's ideal for both city commuting and long road trips."
+        },
+        honda_crv: {
+          name: "Honda CR-V",
+          year: 2023,
+          mileage: "18,000 miles",
+          price: "$28,500",
+          type: "SUV",
+          color: "Black",
+          features: ["AWD", "Apple CarPlay", "Heated Seats", "Lane Assist"],
+          img: "img/honda_crv.png",
+          description: "The Honda CR-V is a versatile SUV known for its excellent safety ratings and spacious interior. It offers a comfortable ride with plenty of cargo space for all your adventures."
+        },
+        gmc_canyon: {
+          name: "GMC Canyon",
+          year: 2025,
+          mileage: "15,000 miles",
+          price: "$36,000",
+          type: "Truck",
+          color: "Red",
+          features: ["4WD", "Towing Package", "Spray-in Bedliner", "Premium Audio"],
+          img: "img/gmc_truck.png",
+          description: "The GMC Canyon provides solid truck performance with surprising comfort. Its powerful engine and durable construction make it perfect for both work and play."
+        },
+        toyota_tundra: {
+          name: "Toyota Tundra",
+          year: 2024,
+          mileage: "22,500 miles",
+          price: "$58,981",
+          type: "Truck",
+          color: "White",
+          features: ["4WD", "TRD Package", "Tow Hitch", "Premium Package"],
+          img: "img/toyota_truck.png",
+          description: "The Toyota Tundra is a full-size truck known for its reliability and power. With its spacious cabin and impressive towing capacity, it's ready for any job."
+        },
+        honda_accord: {
+          name: "Honda Accord",
+          year: 2023,
+          mileage: "20,000 miles",
+          price: "$25,900",
+          type: "Sedan",
+          color: "Blue",
+          features: ["Bluetooth", "Sunroof", "Lane Assist", "Apple CarPlay"],
+          img: "img/honda_accord.png",
+          description: "The Honda Accord combines style, comfort, and performance in a sleek package. With its fuel-efficient engine and premium features, it's a joy to drive."
+        },
+        toyota_rav4: {
+          name: "Toyota RAV4",
+          year: 2024,
+          mileage: "10,000 miles",
+          price: "$30,200",
+          type: "SUV",
+          color: "Gray",
+          features: ["AWD", "Apple CarPlay", "Adaptive Cruise", "Power Liftgate"],
+          img: "img/toyota_rav.png",
+          description: "The Toyota RAV4 is a compact SUV that offers great fuel economy without sacrificing space or capability. Its modern design and tech features make it a top choice."
+        }
+      };
+
+      // Display vehicle details
+      const infoSection = document.getElementById('vehicle-info');
+      const vehicle = vehicleData[vehicleKey];
+
+      if (vehicle) {
+        document.getElementById('vehicle-title').textContent = vehicle.name;
+        
+        // Create features list
+        const featuresList = vehicle.features.map(feature => 
+          `<li>${feature}</li>`
+        ).join('');
+
+        infoSection.innerHTML = `
+          <div class="vehicle-card">
+            <img src="${vehicle.img}" alt="${vehicle.name}" class="vehicle-image" loading="lazy">
+            <div class="vehicle-info">
+              <h2>${vehicle.name}</h2>
+              <p><strong>Year:</strong> ${vehicle.year}</p>
+              <p><strong>Type:</strong> ${vehicle.type}</p>
+              <p><strong>Mileage:</strong> ${vehicle.mileage}</p>
+              <p><strong>Price:</strong> ${vehicle.price}</p>
+              <p><strong>Color:</strong> ${vehicle.color}</p>
+              <h3>Features</h3>
+              <ul class="features-list">${featuresList}</ul>
+              <h3>Description</h3>
+              <p>${vehicle.description}</p>
+              <a href="contact.html" class="details-btn">Contact Us About This Vehicle</a>
+            </div>
+          </div>
+        `;
+      } else {
+        infoSection.innerHTML = `
+          <div class="error-message">
+            <p>Sorry, the requested vehicle could not be found.</p>
+            <a href="index.html" class="details-btn">Browse All Vehicles</a>
+          </div>
+        `;
+      }
+    });
+  </script>
+</body>
+</html>
